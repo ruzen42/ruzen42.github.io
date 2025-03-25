@@ -1,5 +1,0 @@
-all:
-	@echo "Deploy..."
-	@git commit -am "deploy"
-	@git push
-
