@@ -1,82 +1,49 @@
 body {
-    background-color: #000000;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #f6f8fa;
+    color: #24292e;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.terminal {
-    background-color: rgba(0, 0, 0, 0.85);
     padding: 40px;
-    border: 2px solid #00ff00;
-    border-radius: 12px;
-    box-shadow: 0 0 30px #00ff00;
-    width: 90%;
-    max-width: 800px;
-    text-shadow: 0 0 15px #00ff00;
-    animation: pulseGlow 3s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-h1, p, ul, li, a {
-    margin: 15px 0;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+.card {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 700px;
+    width: 100%;
 }
 
 h1 {
-    animation-delay: 0.5s;
+    font-size: 2rem;
+    margin-bottom: 16px;
 }
 
-p:nth-of-type(1) { animation-delay: 1s; }
-p:nth-of-type(2) { animation-delay: 1.5s; }
-p:nth-of-type(3) { animation-delay: 2s; }
-p:nth-of-type(4) { animation-delay: 2.5s; }
-ul { animation-delay: 3s; }
-p:nth-of-type(5) { animation-delay: 4s; }
-.terminal-footer { animation-delay: 4.5s; }
+p, ul, li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
 
 ul {
-    list-style-type: "▸ ";
     padding-left: 20px;
 }
 
+li {
+    list-style-type: disc;
+}
+
 a {
-    color: #00ff00;
-    text-decoration: underline;
-    transition: color 0.3s, text-shadow 0.3s;
+    color: #0969da;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #00ffaa;
-    text-shadow: 0 0 20px #00ffaa;
-}
-
-.cursor {
-    display: inline-block;
-    animation: blink 1s infinite;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-}
-
-@keyframes pulseGlow {
-    from { box-shadow: 0 0 20px #00ff00; }
-    to { box-shadow: 0 0 50px #00ff00; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    color: #054289;
+    text-decoration: underline;
 }

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bio - GitHub Style</title>
+    <title>My bio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <h1>Hello, I'm Ruzen42</h1>
-        <p>I use Slackware Linux on my PC and laptop as my main OS.</p>
-        <p>I work with Neovim and Vim, sometimes using IDEs for specific stacks.</p>
+    <div class="terminal">
+        <h1>~ Hello, I'm Ruzen42</h1>
+        <p>I'm use Slackware Linux on my PC and laptop, for main </p>
+        <p>I'm use Neovim and Vim editors, sometimes use IDEs for special stack</p>
         <p>I'm a passionate developer, open-source enthusiast, and technology explorer.</p>
         <p>I love working with Linux, building efficient systems, and writing clean code.</p>
         <p><strong>Skills:</strong> C#, .NET, Linux, DevOps, Haskell, Rust.</p>
@@ -21,6 +21,8 @@
             <li>Creating cross-platform desktop apps using Avalonia.</li>
         </ul>
         <p><strong>Find me on GitHub:</strong> <a href="https://github.com/ruzen42" target="_blank">github.com/ruzen42</a></p>
+        <p class="terminal-footer">[ Press F5 to refresh the matrix... ]</p>
+        <p class="cursor">▊</p>
     </div>
 </body>
 </html>
