@@ -1,48 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #000;
     color: #00ff88;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Ubuntu', ubuntu, monospace;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+nav {
+    background: #111;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #00ff88;
+    box-shadow: 0 0 10px #00ff88;
+    text-align: center;
+}
+
+nav a {
+    color: #00ff88;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #00ff88;
+    transition: text-shadow 0.3s;
+}
+
+nav a:hover {
+    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+}
+
 .card {
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0, 0, 0, 0.1);
     border: 2px solid #00ff88;
-    border-radius: 16px;
-    padding: 40px;
+    padding: 30px;
     width: 90%;
     max-width: 800px;
-    box-shadow: 0 0 30px #00ff88;
-    animation: glow 3s infinite alternate;
-    text-shadow: 0 0 8px #00ff88;
+    margin: 100px auto 40px;
+    border-radius: 0; /* Ensure square edges */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.chapter {
+    padding-left: 40px; /* Larger indentation for chapters */
+    margin-bottom: 30px; /* Space between chapters */
+    border-left: 4px solid #00ff88; /* Visual separator */
+    padding-top: 15px; /* Space above chapter content */
 }
 
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    animation: fadeInDown 1.5s ease-out;
+    border-bottom: 1px dashed #00ff88;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0 15px;
+    border-left: 4px solid #00ff88;
+    padding-left: 10px;
+    color: #00ffaa;
 }
 
 p, ul, li, a {
     line-height: 1.6;
     font-size: 1.1em;
     margin-bottom: 15px;
-    opacity: 0;
-    animation: fadeInUp 1.5s ease forwards;
 }
 
-p:nth-of-type(1) { animation-delay: 0.5s; }
-p:nth-of-type(2) { animation-delay: 1s; }
-p:nth-of-type(3) { animation-delay: 1.5s; }
-p:nth-of-type(4) { animation-delay: 2s; }
-p:nth-of-type(5) { animation-delay: 2.5s; }
-ul { animation-delay: 3s; }
-p:last-of-type { animation-delay: 3.5s; }
+.proj-a {
+    line-height: 1;
+    font-size: 1em;
+    margin-bottom: 15px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+p:nth-of-type(1) { animation: fadeIn 0.5s ease-out forwards; }
+p:nth-of-type(2) { animation: fadeIn 1s ease-out forwards; }
+p:nth-of-type(3) { animation: fadeIn 1.5s ease-out forwards; }
+p:nth-of-type(4) { animation: fadeIn 2s ease-out forwards; }
+p:nth-of-type(5) { animation: fadeIn 2.5s ease-out forwards; }
+ul { animation: fadeIn 3s ease-out forwards; }
+p:last-of-type { animation: fadeIn 3.5s ease-out forwards; }
 
 ul {
     list-style-type: "▸ ";
@@ -52,6 +106,9 @@ ul {
 
 li {
     margin-bottom: 10px;
+    padding-left: 5px;
+    border-left: 2px dotted #00ff88;
+    padding-left: 10px;
 }
 
 a {
@@ -67,19 +124,35 @@ a:hover {
     border-bottom: 1px solid #00ffaa;
 }
 
-@keyframes fadeInUp {
+.page {
+    display: none;
+    width: 100%;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #00ff88;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Animation for text fade-in */
+@keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 20px #00ff88; }
-    to { box-shadow: 0 0 50px #00ff88; }
 }
 
 @media (max-width: 600px) {
@@ -87,11 +160,24 @@ a:hover {
         padding: 25px;
     }
 
+    .chapter {
+        padding-left: 20px; /* Reduced indentation on small screens */
+    }
+
     h1 {
         font-size: 2em;
     }
 
+    h2 {
+        font-size: 1.5em;
+    }
+
     p, li {
+        font-size: 1em;
+    }
+
+    nav a {
+        margin: 0 10px;
         font-size: 1em;
     }
 }
