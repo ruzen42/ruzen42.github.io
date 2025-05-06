@@ -3,24 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bio - GitHub Style</title>
+    <title>RUZEN42</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <h2>Hello, I'm Ruzen42</h2>
-        <p>I use Slackware Linux on my PC and laptop as my main OS.</p>
-        <p>I work with Neovim and Vim, sometimes using IDEs for specific stacks.</p>
-        <p>I'm a passionate developer, open-source enthusiast, and technology explorer.</p>
-        <p>I love working with Linux, building efficient systems, and writing clean code.</p>
-        <p><strong>Skills:</strong> C#, .NET, Linux, DevOps, Haskell, Rust.</p>
-        <p><strong>Current Projects:</strong></p>
-        <ul>
-            <li>Developing a custom package manager inspired by Slackware.</li>
-            <li>Building a text editor with Vim-like controls.</li>
-            <li>Creating cross-platform desktop apps using Avalonia.</li>
-        </ul>
-        <p><strong>Find me on GitHub:</strong> <a href="https://github.com/ruzen42" target="_blank">github.com/ruzen42</a></p>
+    <!-- Navigation -->
+    <nav>
+        <a href="#home" class="nav-link active" data-page="home">Главная</a>
+        <a href="#about" class="nav-link" data-page="about">Обо мне</a>
+        <a href="#projects" class="nav-link" data-page="projects">Проекты</a>
+        <a href="#contact" class="nav-link" data-page="contact">Связяться</a>
+    </nav>
+
+    <!-- Page Sections -->
+    <div class="page" id="home">
+        <div class="card">
+            <h1>Ruzen42 info</h1>
+            <p>Я Ярослав, я программист из Казахстана. Пишу на C++ и C#</p>
+            <p>Пишу код в Neovim и Vim, иногда юзаю Rider, он для шарпа больше подходит</p>
+            <p>В моем Ryzen 5 3500 и видюха RX5600XT, с материнкой MSI a320 micro-ATX </p>
+            <p>Использую Slackware Linux как декстоп и сервер, люблю надежность и сис. админское дело</p>
+            <p><strong>Скиллы:</strong> C#, .NET, Linux, DevOps, Haskell, Python, Bash.</p>
+            <p><strong>Мое портфолио:</strong> <a href="https://github.com/ruzen42" target="_blank">Github</a></p>
+        </div>
     </div>
+
+    <div class="page" id="about" style="display: none;">
+        <div class="card">
+            <div class="chapter">
+                <h2>Обо мне</h2>
+                <p>Меня зовут Ярослав, и в сообществе меня знают как RUZEN42. Я программист из Казахстана, и моя страсть к технологиям началась еще в детстве. Одним из самых ярких воспоминаний из тех времен стало создание моего первого рабочего приложения на C#. Мне тогда было всего 10 лет, и это был настоящий прорыв для меня. Именно тогда я понял, насколько увлекательным может быть программирование. С тех пор я занимаюсь кодингом уже много лет, и хотя я до сих пор иногда спрашиваю себя, мое ли это призвание, мне это очень нравится, и я не представляю свою жизнь без разработки.</p>
+            </div>
+            <div class="chapter">
+                <h2>Выбор ОС</h2>
+                <p>Я ценю простоту и надежность в технологиях, поэтому для работы использую Slackware Linux — как на десктопе, так и на сервере. Мне нравится ее стабильность и минимализм, особенно такие инструменты, как pkgtool и slapt-src. Я пробовал дистрибутивы вроде Arch Linux, но они не в моем стиле — слишком много ручной настройки. Однако я открыт к новым технологиям: например, я не против systemd, и если бы он был в Slackware, я бы с радостью его использовал. Для меня главное — это баланс между простотой и функциональностью.</p>
+            </div>
+            <div class="chapter">
+                <h2>Выбор редактора кода</h2>
+                <p>Код я пишу в основном в Neovim и Vim, хотя для проектов на C# иногда использую Rider, который лучше подходит для этой задачи. Мой технический стек включает C++, C#, .NET, Linux, DevOps, Haskell, Python и Bash, что позволяет мне браться за самые разные задачи. Иногда я увлекаюсь низкоуровневым программированием — люблю поэкспериментировать с чистым C или даже ассемблером, особенно если это связано с созданием ядер операционных систем. Правда, это скорее хобби, чем основная работа.</p>
+            </div>
+            <div class="chapter">
+                <h2>История проектов</h2>
+                <p>Одним из первых крупных проектов, которые я сделал, был MalledeferOWASD — пародия на Five Nights at Freddy’s, написанная на Godot с использованием C#. Этот проект многому меня научил, особенно о работе с игровыми движками, но со временем я его подзабросил. Честно говоря, игры меня больше не увлекают, и я сосредоточился на других задачах. Самым большим достижением в своей карьере я считаю создание RBoard — шахматной доски на AvaloniaUI с искусственным интеллектом на Haskell. Этот проект показал, что я могу успешно сочетать разные языки и технологии, и я очень горжусь результатом.</p>
+            </div>
+            <div class="chapter">
+                <h2>Другие хобби</h2>
+                <p>Помимо программирования, у меня есть и другие увлечения, которые помогают мне поддерживать баланс в жизни. Я занимаюсь велоспортом и борьбой, что позволяет мне оставаться в форме и отвлекаться от работы. На выходных я часто гуляю с друзьями, катаюсь на велосипедах, а иногда мы играем в 0 A.D., Minecraft или JoJo All Battle R. Эти занятия помогают мне очистить голову и находить новые идеи. Мне кажется, что такая активность немного необычна для программистов и системных администраторов, но для меня прогулки и спорт — это важная часть жизни.</p>
+            </div>
+            <div class="chapter">
+                <h2>Мой интерес и мой ПК</h2>
+                <p>Мой путь в программировании во многом вдохновлен моей семьей, особенно дедушкой и родственниками, которые всегда поддерживали мой интерес к технологиям. Сейчас я живу в Казахстане, и моя рабочая станция собрана на базе процессора Ryzen 5 3500, видеокарты RX5600XT и материнской платы MSI A320 micro-ATX. Это идеальная система для моих задач, будь то разработка дистрибутива или эксперименты с новыми языками.</p>
+            </div>
+            <div class="chapter">
+                <h2>Самый Амбициозный проект</h2>
+                <p>Один из моих самых амбициозных проектов — это создание командой Linux-дистрибутива NurOS. Самой сложной частью оказался пакетный менеджер Tulpar, над которым я работал с использованием C++. Этот язык невероятно сложный, но в то же время красивый, и мне пришлось столкнуться с множеством нюансов, чтобы довести проект до ума. Среди других моих работ — установщик для NurOS, шахматная программа RBoard, а также несколько замороженных проектов, таких как Purepkg (пакетный менеджер на Haskell) и OWASD. Еще я начал HSFetch — аналог neofetch на Haskell с крутыми логотипами, но пока не успел его завершить.</p>
+            </div>
+            <div class="chapter">
+                <h2>Душа</h2>
+                <p>Я постоянно изучаю что-то новое, и это иногда мешает мне сосредоточиться на одном деле. Например, я могу начать изучать новый язык программирования, даже если текущий проект еще не завершен. Но я считаю, что такой подход помогает мне расти как разработчику, даже если требует больше времени. Мои профиль на GitHub (github.com/ruzen42) и YouTube-канал (@denyruzen42) — это места, где я делюсь своими проектами и идеями с сообществом.</p>
+            </div>
+            <div class="chapter">
+                <h2>Будущее</h2>
+                <p>В будущем я вижу для себя два пути: либо стать C# .NET Developer, либо уйти в DevOps. Оба направления мне интересны, и я пока размышляю, какой выбрать. Но одно я знаю точно — я хочу продолжать создавать проекты, которые будут полезны другим и вдохновят их, как когда-то вдохновили меня мои первые шаги в программировании.</p>
+            </div>
+        </div>    </div>
+
+    <div class="page" id="projects" style="display: none;">
+        <div class="card">
+            <h2>Мои проекты </h2>
+            <p><strong>1:</strong> Создание своего независимого Linux дистрибутива NurOS <a class="proj-a" href="https://github.com/NurOS-Linux">Github</a> и <a class="proj-a" href="https://nuros.org">Оффицальный сайт</a></p>
+            <p><strong>2:</strong> Пакетный менеджер Tulpar для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/Tulpar">Github</a> </p>
+            <p><strong>3:</strong> Установщик для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/nuros-start">Github</a> </p>
+            <p><strong>4:</strong> RBoard - это шахматная доска на AvaloniaUI C#, а ИИ на Haskell <a class="proj-a" href="https://github.com/ruzen42/rboard">Github</a> </p>
+            <p><strong>5:</strong> Purepkg (заморожен) - это пакетный менеджер на Haskell с декларативным конфигом, не Nix <a class="proj-a" href="https://github.com/ruzen42/purepkg">Github</a> </p>
+            <p><strong>6:</strong> HSFetch - это aналог neofetch на Haskell с декларативным конфигом (не реализованно) и с крутыми лого <a class="proj-a" href="https://github.com/NaGNU/rfetch">Github</a> </p>
+            <p><strong>7:</strong> OWASD (заморожен) - это FnaF пародия на Godot C# с Шампунем жумайсынба <a class="proj-a" href="https://github.com/ruzen42/MalledeferOWASD">Github</a> </p>
+        </div>
+    </div>
+
+    <div class="page" id="contact" style="display: none;">
+        <div class="card">
+            <h2>Я в Интернете</h2>
+            <p><strong>Мой Github:</strong> <a href="https://github.com/ruzen42" target="_blank">клик</a></p>
+            <p><strong>Мой Youtube:</strong> <a href="https://www.youtube.com/@denyruzen42" target="_blank">клик</a></p>
+        </div>
+    </div>
+
+    <!-- Matrix Background -->
+    <canvas id="matrix"></canvas>
+    <script src="matrix.js"></script>
+
+    <!-- Navigation Script -->
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('data-page');
+
+                // Hide all pages
+                pages.forEach(page => {
+                    page.style.display = 'none';
+                });
+
+                // Show the selected page
+                document.getElementById(pageId).style.display = 'block';
+
+                // Update active link
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Update URL hash
+                window.location.hash = pageId;
+
+                // Update document title
+                document.title = `RUZEN42 - ${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
+            });
+        });
+
+        // On page load, check for hash and show the correct page
+        window.addEventListener('load', () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
+            if (targetLink) {
+                targetLink.click();
+            }
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.replace('#', '') || 'home';
+            const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
+            if (targetLink) {
+                targetLink.click();
+            }
+        });
+    </script>
 </body>
 </html>
