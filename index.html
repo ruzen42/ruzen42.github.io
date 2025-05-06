@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RUZEN42</title>
+    <title>ruzen42</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,6 +13,7 @@
         <a href="#about" class="nav-link" data-page="about">Обо мне</a>
         <a href="#projects" class="nav-link" data-page="projects">Проекты</a>
         <a href="#contact" class="nav-link" data-page="contact">Связяться</a>
+        <a href="#hardware" class="nav-link" data-page="hardware">Железо</a>
     </nav>
 
     <!-- Page Sections -->
@@ -27,12 +28,37 @@
             <p><strong>Мое портфолио:</strong> <a href="https://github.com/ruzen42" target="_blank">Github</a></p>
         </div>
     </div>
+    
+    <div class="page" id="hardware">
+        <div class="card">
+        <h1>Железо</h1>
+        <div class="hard-card">
+            <h2 align="center" >ПК</h2>
+            <p><strong>CPU: </strong> Ryzen 5 3500 4.0GHz</p>
+            <p><strong>GPU: </strong> RX5600XT</p>
+            <p><strong>SSD: </strong> Kingston 256GB</p>
+            <p><strong>Power supply: </strong>Huntkey 550W</p>
+            <p><strong>HDD: </strong> Samsung 1000GB</p>
+            <p><strong>WIFI: </strong> Mercusys MW300UM</p>
+            <p><strong>Motherboard: </strong>MSI A320 A PRO </p>
+            <p><strong>RAM: </strong>MSPoint 16GB 3200Hz DDR4</p>
+        </div>
+        <div class="hard-card">
+          <h2 align="center"> Ноут</h2>
+            <p><strong>Name: </strong> Acer E5-571 </p>
+            <p><strong>CPU: </strong> Intel I3 4005 0.7GHz</p>
+            <p><strong>GPU: </strong> Intel HD Graphics</p>
+            <p><strong>HDD: </strong> Samsung 1000GB</p>
+            <p><strong>RAM: </strong>Samsung 4GB 1700Hz DDR3</p>
+        </div>
+        </div>
+    </div>
 
     <div class="page" id="about" style="display: none;">
         <div class="card">
             <div class="chapter">
                 <h2>Обо мне</h2>
-                <p>Меня зовут Ярослав, и в сообществе меня знают как RUZEN42. Я программист из Казахстана, и моя страсть к технологиям началась еще в детстве. Одним из самых ярких воспоминаний из тех времен стало создание моего первого рабочего приложения на C#. Мне тогда было всего 10 лет, и это был настоящий прорыв для меня. Именно тогда я понял, насколько увлекательным может быть программирование. С тех пор я занимаюсь кодингом уже много лет, и хотя я до сих пор иногда спрашиваю себя, мое ли это призвание, мне это очень нравится, и я не представляю свою жизнь без разработки.</p>
+                <p>Меня зовут Ярослав, и в сообществе меня знают как ruzen42. Я программист из Казахстана, и моя страсть к технологиям началась еще в детстве. Одним из самых ярких воспоминаний из тех времен стало создание моего первого рабочего приложения на C#. Мне тогда было всего 10 лет, и это был настоящий прорыв для меня. Именно тогда я понял, насколько увлекательным может быть программирование. С тех пор я занимаюсь кодингом уже много лет, и хотя я до сих пор иногда спрашиваю себя, мое ли это призвание, мне это очень нравится, и я не представляю свою жизнь без разработки.</p>
             </div>
             <div class="chapter">
                 <h2>Выбор ОС</h2>
@@ -86,6 +112,9 @@
             <h2>Я в Интернете</h2>
             <p><strong>Мой Github:</strong> <a href="https://github.com/ruzen42" target="_blank">клик</a></p>
             <p><strong>Мой Youtube:</strong> <a href="https://www.youtube.com/@denyruzen42" target="_blank">клик</a></p>
+            <p><strong>Мой Telegram канал:</strong> <a href="https://t.me/ruzen42" target="_blank">клик</a></p>
+            <p><strong>Моя Telegram:</strong> <a href="https://t.me/ruzen72" target="_blank">клик</a></p>
+            <p><strong>Мой Steam:</strong> <a href="https://steamcommunity.com/id/legend1ruzen98" target="_blank">клик</a></p>
         </div>
     </div>
 
@@ -119,7 +148,7 @@
                 window.location.hash = pageId;
 
                 // Update document title
-                document.title = `RUZEN42 - ${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
+                document.title = `ruzen42 - ${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
             });
         });
 

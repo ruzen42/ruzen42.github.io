@@ -13,8 +13,8 @@ body {
     min-height: 100vh;
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 nav {
@@ -49,31 +49,46 @@ nav a:hover {
     width: 90%;
     max-width: 800px;
     margin: 100px auto 40px;
-    border-radius: 0; /* Ensure square edges */
-    overflow: hidden; /* Prevent content overflow */
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.hard-card {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid #00ff88;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto 10px;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#hardware .card p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#hardware .card p strong {
+    flex: 0 0 150px; /* Fixed width for labels */
 }
 
 .chapter {
-    padding-left: 40px; /* Larger indentation for chapters */
-    margin-bottom: 30px; /* Space between chapters */
-    border-left: 4px solid #00ff88; /* Visual separator */
-    padding-top: 15px; /* Space above chapter content */
+    padding-left: 40px;
+    margin-bottom: 30px;
+    padding-top: 15px;
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
     border-bottom: 1px dashed #00ff88;
     padding-bottom: 10px;
-    text-transform: uppercase;
 }
 
 h2 {
     font-size: 1.8em;
-    margin: 20px 0 15px;
-    border-left: 4px solid #00ff88;
-    padding-left: 10px;
-    color: #00ffaa;
 }
 
 p, ul, li, a {
@@ -95,6 +110,10 @@ p:nth-of-type(2) { animation: fadeIn 1s ease-out forwards; }
 p:nth-of-type(3) { animation: fadeIn 1.5s ease-out forwards; }
 p:nth-of-type(4) { animation: fadeIn 2s ease-out forwards; }
 p:nth-of-type(5) { animation: fadeIn 2.5s ease-out forwards; }
+p:nth-of-type(6) { animation: fadeIn 2.5s ease-out forwards; }
+p:nth-of-type(7) { animation: fadeIn 2.5s ease-out forwards; }
+p:nth-of-type(8) { animation: fadeIn 2.5s ease-out forwards; }
+p:nth-of-type(9) { animation: fadeIn 2.5s ease-out forwards; }
 ul { animation: fadeIn 3s ease-out forwards; }
 p:last-of-type { animation: fadeIn 3.5s ease-out forwards; }
 
@@ -127,7 +146,6 @@ a:hover {
 .page {
     display: none;
     width: 100%;
-    text-align: center;
 }
 
 .page.active {
@@ -161,7 +179,15 @@ a:hover {
     }
 
     .chapter {
-        padding-left: 20px; /* Reduced indentation on small screens */
+        padding-left: 20px;
+    }
+
+    #hardware .card p {
+        display: block; /* Revert to vertical layout on small screens */
+    }
+
+    #hardware .card p strong {
+        flex: none; /* Remove fixed width on small screens */
     }
 
     h1 {
