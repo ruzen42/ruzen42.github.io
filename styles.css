@@ -9,17 +9,17 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: #000;
-    color: #00ff88;
+    color: #00fc00;
     text-align: center;
     padding: 10px 0;
-    border-top: 2px solid #00ff88;
+    border-top: 2px solid #00fc00;
     font-family: 'Ubuntu', ubuntu, monospace;
     font-size: 1em;
 }
 
 body {
     background-color: #000;
-    color: #00ff88;
+    color: #00fc00;
     font-family: 'Ubuntu', ubuntu, monospace;
     margin: 0;
     padding: 0;
@@ -37,27 +37,27 @@ nav {
     width: 100%;
     top: 0;
     z-index: 10;
-    border-bottom: 2px solid #00ff88;
-    box-shadow: 0 0 10px #00ff88;
+    border-bottom: 2px solid #00fc00;
+    box-shadow: 0 0 10px #00fc00;
     text-align: center;
 }
 
 nav a {
-    color: #00ff88;
+    color: #00fc00;
     text-decoration: none;
     margin: 0 15px;
     font-size: 1.2em;
-    text-shadow: 0 0 5px #00ff88;
+    text-shadow: 0 0 5px #00fc00;
     transition: text-shadow 0.3s;
 }
 
 nav a:hover {
-    text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+    text-shadow: 0 0 10px #00fc00, 0 0 20px #00fc00;
 }
 
 .card {
     background-color: rgba(0, 0, 0, 1);
-    border: 2px solid #00ff88;
+    border: 2px solid #00fc00;
     padding: 30px;
     width: 100%;
     max-width: 800px;
@@ -68,7 +68,7 @@ nav a:hover {
 
 .hard-card {
     background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid #00ff88;
+    border: 1px solid #00fc00;
     padding: 30px;
     width: 100%;
     max-width: 800px;
@@ -96,7 +96,7 @@ nav a:hover {
 
 h1 {
     font-size: 2.5em;
-    border-bottom: 1px dashed #00ff88;
+    border-bottom: 1px dashed #00fc00;
     padding-bottom: 10px;
 }
 
@@ -139,21 +139,21 @@ ul {
 li {
     margin-bottom: 10px;
     padding-left: 5px;
-    border-left: 2px dotted #00ff88;
+    border-left: 2px dotted #00fc00;
     padding-left: 10px;
 }
 
 a {
-    color: #00ff88;
+    color: #00fc00;
     text-decoration: none;
-    border-bottom: 1px dashed #00ff88;
+    border-bottom: 1px dashed #00fc00;
     transition: all 0.3s;
 }
 
 a:hover {
-    color: #00ffaa;
-    text-shadow: 0 0 20px #00ffaa;
-    border-bottom: 1px solid #00ffaa;
+    color: #00fc00;
+    text-shadow: 0 0 20px #00fc00;
+    border-bottom: 1px solid #00fc00;
 }
 
 .page {
@@ -166,8 +166,8 @@ a:hover {
 }
 
 .nav-link.active {
-    border-bottom: 2px solid #00ff88;
-    text-shadow: 0 0 10px #00ff88;
+    border-bottom: 2px solid #00fc00;
+    text-shadow: 0 0 10px #00fc00;
 }
 
 #matrix {
