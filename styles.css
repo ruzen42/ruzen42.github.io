@@ -56,7 +56,7 @@ nav a:hover {
 }
 
 .card {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0.1);
     border: 2px solid #00fc00;
     padding: 30px;
     width: 100%;
@@ -67,7 +67,7 @@ nav a:hover {
 }
 
 .hard-card {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.1);
     border: 1px solid #00fc00;
     padding: 30px;
     width: 100%;
