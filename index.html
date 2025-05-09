@@ -14,6 +14,7 @@
         <a href="#projects" class="nav-link" data-page="projects">Проекты</a>
         <a href="#contact" class="nav-link" data-page="contact">Связяться</a>
         <a href="#hardware" class="nav-link" data-page="hardware">Железо</a>
+        <a href="#fetch" class="nav-link" data-page="fetch">Фетчи</a>
     </nav>
 
     <div class="page" id="home">
@@ -116,11 +117,17 @@
         </div>
     </div>
 
-    <!-- Matrix Background -->
+    <div class="page" id="fetch">
+      <div class="card">
+        <img src="0fetch.png" style="width: 100%; height: auto;">
+        <img src="1fetch.png" style="width: 100%; height: auto;">
+        <img src="rice.png" style="width: 100%; height: auto;">
+      </div>
+    </div>
+
     <canvas id="matrix"></canvas>
     <script src="matrix.js"></script>
 
-    <!-- Navigation Script -->
     <script>
         const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page');
@@ -130,27 +137,21 @@
                 e.preventDefault();
                 const pageId = link.getAttribute('data-page');
 
-                // Hide all pages
                 pages.forEach(page => {
                     page.style.display = 'none';
                 });
 
-                // Show the selected page
                 document.getElementById(pageId).style.display = 'block';
 
-                // Update active link
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
 
-                // Update URL hash
                 window.location.hash = pageId;
 
-                // Update document title
                 document.title = `ruzen42 - ${pageId.charAt(0).toUpperCase() + pageId.slice(1)}`;
             });
         });
 
-        // On page load, check for hash and show the correct page
         window.addEventListener('load', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
@@ -159,7 +160,6 @@
             }
         });
 
-        // Handle browser back/forward buttons
         window.addEventListener('hashchange', () => {
             const hash = window.location.hash.replace('#', '') || 'home';
             const targetLink = document.querySelector(`.nav-link[data-page="${hash}"]`);
@@ -170,6 +170,6 @@
     </script>
 </body>
 <footer>
-  <p>Последнее обновление сайта было 2025 году 7 мая (создан 25 марта 2025 года) v2.2 сайт вдохновлен <a href="https://www.slackware.com">slackware.com</a></p>
+  <p>25.3.2025 - 9.5.2025 inspired by <a href="https://www.slackware.com">slackware.com</a></p>
 </footer>
 </html>
