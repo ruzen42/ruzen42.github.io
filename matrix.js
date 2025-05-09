@@ -10,14 +10,14 @@ const columns = canvas.width / fontSize;
 const drops = [];
 
 for (let x = 0; x < columns; x++) {
-    drops[x] = 100;
+    drops[x] = 1000;
 }
 
 function draw() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#00fc00';
+    ctx.fillStyle = '#00ff99';
     ctx.font = fontSize + 'px monospace';
 
     for (let i = 0; i < drops.length; i++) {
