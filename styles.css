@@ -39,6 +39,18 @@ nav {
     z-index: 10;
     border-bottom: 2px solid #00ff99;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add styles for the div inside nav to make links display in a single row */
+nav > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -48,6 +60,7 @@ nav a {
     font-size: 1.2em;
     text-shadow: 0 0 5px #00ff99;
     transition: text-shadow 0.3s;
+    display: inline-block;
 }
 
 nav a:hover {
@@ -185,6 +198,59 @@ a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Language switcher styles */
+.lang-switch {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid #00ff99;
+    color: #00ff99;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: 'Ubuntu', ubuntu, monospace;
+    font-size: 0.9em;
+    transition: all 0.3s;
+}
+
+.lang-btn:hover {
+    background-color: rgba(0, 255, 153, 0.2);
+    text-shadow: 0 0 10px #00ff99;
+}
+
+.lang-btn.active {
+    background-color: rgba(0, 255, 153, 0.3);
+    box-shadow: 0 0 10px #00ff99;
+}
+
+/* Language specific content */
+.en, .ru {
+    display: none;
+}
+
+.lang-en .en {
+    display: block;
+}
+
+.lang-ru .ru {
+    display: block;
+}
+
+/* Exception for images in the fetch section */
+#fetch img, #fetch .card {
+    display: block !important;
+}
+
+/* Add a title for the fetch section in both languages */
+#fetch h2.en, #fetch h2.ru {
+    margin-bottom: 20px;
+}
+
 @media (max-width: 600px) {
     .card {
         padding: 25px;
@@ -218,4 +284,22 @@ a:hover {
         margin: 0 10px;
         font-size: 1em;
     }
+    
+    .lang-switch {
+        position: relative;
+        right: auto;
+        margin-top: 10px;
+        justify-content: center;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    /* Keep links in a row even on small screens */
+    nav > div:first-child {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
+
