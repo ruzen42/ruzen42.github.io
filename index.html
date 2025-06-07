@@ -7,32 +7,67 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png" />
 </head>
-<body>
+<body class="lang-en">
     <nav>
-        <a href="#home" class="nav-link active" data-page="home">Главная</a>
-        <a href="#about" class="nav-link" data-page="about">Обо мне</a>
-        <a href="#projects" class="nav-link" data-page="projects">Проекты</a>
-        <a href="#contact" class="nav-link" data-page="contact">Связяться</a>
-        <a href="#hardware" class="nav-link" data-page="hardware">Железо</a>
-        <a href="#fetch" class="nav-link" data-page="fetch">Фетчи</a>
+        <div>
+            <a href="#home" class="nav-link active" data-page="home">
+                <span class="en">Home</span>
+                <span class="ru">Главная</span>
+            </a>
+            <a href="#about" class="nav-link" data-page="about">
+                <span class="en">About Me</span>
+                <span class="ru">Обо мне</span>
+            </a>
+            <a href="#projects" class="nav-link" data-page="projects">
+                <span class="en">Projects</span>
+                <span class="ru">Проекты</span>
+            </a>
+            <a href="#contact" class="nav-link" data-page="contact">
+                <span class="en">Contact</span>
+                <span class="ru">Связяться</span>
+            </a>
+            <a href="#hardware" class="nav-link" data-page="hardware">
+                <span class="en">Hardware</span>
+                <span class="ru">Железо</span>
+            </a>
+            <a href="#fetch" class="nav-link" data-page="fetch">
+                <span class="en">Fetches</span>
+                <span class="ru">Фетчи</span>
+            </a>
+        </div>
+        <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="ru">RU</button>
+        </div>
     </nav>
 
     <div class="page" id="home">
         <div class="card">
             <h1>Ruzen42 info</h1>
-            <p>Я Ярослав, я программист из Казахстана. Пишу на C++ и C#</p>
-            <p>Пишу код в Neovim и Vim, иногда юзаю Rider, он для шарпа лучше</p>
-            <p>Использую Slackware Linux 15.0 как декстоп и сервер, люблю надежность и сисадминское дело</p>
-            <p><strong>Скиллы:</strong> C#, .NET, Linux, DevOps, Haskell, Python, Bash.</p>
-            <p><strong>Мое портфолио:</strong> <a href="https://github.com/ruzen42" target="_blank">Github</a></p>
+            <p class="en">I'm Yaroslav, a programmer from Kazakhstan. I code in C++ and C#</p>
+            <p class="ru">Я Ярослав, я программист из Казахстана. Пишу на C++ и C#</p>
+            
+            <p class="en">I write code in Neovim and Vim, sometimes I use Rider, it's better for C#</p>
+            <p class="ru">Пишу код в Neovim и Vim, иногда юзаю Rider, он для шарпа лучше</p>
+            
+            <p class="en">I use Slackware Linux 15.0 as desktop and server, I love reliability and system administration</p>
+            <p class="ru">Использую Slackware Linux 15.0 как декстоп и сервер, люблю надежность и сисадминское дело</p>
+            
+            <p class="en"><strong>Skills:</strong> C#, .NET, Linux, DevOps, Haskell, Python, Bash.</p>
+            <p class="ru"><strong>Скиллы:</strong> C#, .NET, Linux, DevOps, Haskell, Python, Bash.</p>
+            
+            <p class="en"><strong>My portfolio:</strong> <a href="https://github.com/ruzen42" target="_blank">Github</a></p>
+            <p class="ru"><strong>Мое портфолио:</strong> <a href="https://github.com/ruzen42" target="_blank">Github</a></p>
         </div>
     </div>
     
     <div class="page" id="hardware">
         <div class="card">
-        <h1>Железо</h1>
+        <h1 class="en">Hardware</h1>
+        <h1 class="ru">Железо</h1>
         <div class="hard-card">
-            <h2 align="center" >ПК</h2>
+            <h2 align="center" class="en">PC</h2>
+            <h2 align="center" class="ru">ПК</h2>
             <p><strong>CPU: </strong> Ryzen 5 3500 4.0GHz</p>
             <p><strong>GPU: </strong> RX5600XT</p>
             <p><strong>SSD: </strong> Kingston 256GB</p>
@@ -43,7 +78,8 @@
             <p><strong>RAM: </strong>MSPoint 16GB 3200Hz DDR4</p>
         </div>
         <div class="hard-card">
-          <h2 align="center"> Ноут</h2>
+          <h2 align="center" class="en">Laptop</h2>
+          <h2 align="center" class="ru">Ноут</h2>
             <p><strong>Name: </strong> Acer E5-571 </p>
             <p><strong>CPU: </strong> Intel I3 4005 0.7GHz</p>
             <p><strong>GPU: </strong> Intel HD Graphics</p>
@@ -56,69 +92,113 @@
     <div class="page" id="about" style="display: none;">
         <div class="card">
             <div class="chapter">
-                <h2>Обо мне</h2>
-                <p>Меня зовут Ярослав, и в сообществе меня знают как ruzen42. Я программист из Казахстана, и моя страсть к технологиям началась еще в детстве. Одним из самых ярких воспоминаний из тех времен стало создание моего первого рабочего приложения на C#. Мне тогда было всего 10 лет, и это был настоящий прорыв для меня. Именно тогда я понял, насколько увлекательным может быть программирование. С тех пор я занимаюсь кодингом уже много лет, и хотя я до сих пор иногда спрашиваю себя, мое ли это призвание, мне это очень нравится, и я не представляю свою жизнь без разработки.</p>
+                <h2 class="en">About Me</h2>
+                <h2 class="ru">Обо мне</h2>
+                <p class="en">My name is Yaroslav, and in the community I'm known as ruzen42. I'm a programmer from Kazakhstan, and my passion for technology began in childhood. One of my brightest memories from those times was creating my first working application in C#. I was only 10 years old then, and it was a real breakthrough for me. That's when I realized how fascinating programming could be. Since then, I've been coding for many years, and although I sometimes ask myself if this is my true calling, I really enjoy it and can't imagine my life without development.</p>
+                <p class="ru">Меня зовут Ярослав, и в сообществе меня знают как ruzen42. Я программист из Казахстана, и моя страсть к технологиям началась еще в детстве. Одним из самых ярких воспоминаний из тех времен стало создание моего первого рабочего приложения на C#. Мне тогда было всего 10 лет, и это был настоящий прорыв для меня. Именно тогда я понял, насколько увлекательным может быть программирование. С тех пор я занимаюсь кодингом уже много лет, и хотя я до сих пор иногда спрашиваю себя, мое ли это призвание, мне это очень нравится, и я не представляю свою жизнь без разработки.</p>
             </div>
             <div class="chapter">
-                <h2>Выбор ОС</h2>
-                <p>Я ценю простоту и надежность в технологиях, поэтому для работы использую Slackware Linux — как на десктопе, так и на сервере. Мне нравится ее стабильность и минимализм, особенно такие инструменты, как pkgtool и slapt-src. Я пробовал дистрибутивы вроде Arch Linux, но они не в моем стиле — слишком много ручной настройки. Однако я открыт к новым технологиям: например, я не против systemd, и если бы он был в Slackware, я бы с радостью его использовал. Для меня главное — это баланс между простотой и функциональностью.</p>
+                <h2 class="en">OS Choice</h2>
+                <h2 class="ru">Выбор ОС</h2>
+                <p class="en">I value simplicity and reliability in technology, so I use Slackware Linux for work - both on desktop and server. I like its stability and minimalism, especially tools like pkgtool and slapt-src. I've tried distributions like Arch Linux, but they're not my style - too much manual configuration. However, I'm open to new technologies: for example, I don't mind systemd, and if it were in Slackware, I would gladly use it. For me, the main thing is the balance between simplicity and functionality.</p>
+                <p class="ru">Я ценю простоту и надежность в технологиях, поэтому для работы использую Slackware Linux — как на десктопе, так и на сервере. Мне нравится ее стабильность и минимализм, особенно такие инструменты, как pkgtool и slapt-src. Я пробовал дистрибутивы вроде Arch Linux, но они не в моем стиле — слишком много ручной настройки. Однако я открыт к новым технологиям: например, я не против systemd, и если бы он был в Slackware, я бы с радостью его использовал. Для меня главное — это баланс между простотой и функциональностью.</p>
             </div>
             <div class="chapter">
-                <h2>Выбор редактора кода</h2>
-                <p>Код я пишу в основном в Neovim и Vim, хотя для проектов на C# иногда использую Rider, который лучше подходит для этой задачи. Мой технический стек включает C++, C#, .NET, Linux, DevOps, Haskell, Python и Bash, что позволяет мне браться за самые разные задачи. Иногда я увлекаюсь низкоуровневым программированием — люблю поэкспериментировать с чистым C или даже ассемблером, особенно если это связано с созданием ядер операционных систем. Правда, это скорее хобби, чем основная работа.</p>
+                <h2 class="en">Code Editor Choice</h2>
+                <h2 class="ru">Выбор редактора кода</h2>
+                <p class="en">I write code mainly in Neovim and Vim, although for C# projects I sometimes use Rider, which is better suited for this task. My technical stack includes C++, C#, .NET, Linux, DevOps, Haskell, Python, and Bash, which allows me to tackle a wide variety of tasks. Sometimes I get into low-level programming - I like to experiment with pure C or even assembly, especially if it's related to creating operating system kernels. Though this is more of a hobby than my main work.</p>
+                <p class="ru">Код я пишу в основном в Neovim и Vim, хотя для проектов на C# иногда использую Rider, который лучше подходит для этой задачи. Мой технический стек включает C++, C#, .NET, Linux, DevOps, Haskell, Python и Bash, что позволяет мне браться за самые разные задачи. Иногда я увлекаюсь низкоуровневым программированием — люблю поэкспериментировать с чистым C или даже ассемблером, особенно если это связано с созданием ядер операционных систем. Правда, это скорее хобби, чем основная работа.</p>
             </div>
             <div class="chapter">
-                <h2>История проектов</h2>
-                <p>Одним из первых крупных проектов, которые я сделал, был MalledeferOWASD — пародия на Five Nights at Freddy’s, написанная на Godot с использованием C#. Этот проект многому меня научил, особенно о работе с игровыми движками, но со временем я его подзабросил. Честно говоря, игры меня больше не увлекают, и я сосредоточился на других задачах. Самым большим достижением в своей карьере я считаю создание RBoard — шахматной доски на AvaloniaUI с искусственным интеллектом на Haskell. Этот проект показал, что я могу успешно сочетать разные языки и технологии, и я очень горжусь результатом.</p>
+                <h2 class="en">Project History</h2>
+                <h2 class="ru">История проектов</h2>
+                <p class="en">One of the first major projects I made was MalledeferOWASD - a parody of Five Nights at Freddy's, written in Godot using C#. This project taught me a lot, especially about working with game engines, but over time I abandoned it. To be honest, games no longer fascinate me, and I've focused on other tasks. I consider my biggest achievement in my career to be the creation of RBoard - a chess board on AvaloniaUI with artificial intelligence in Haskell. This project showed that I can successfully combine different languages and technologies, and I'm very proud of the result.</p>
+                <p class="ru">Одним из первых крупных проектов, которые я сделал, был MalledeferOWASD — пародия на Five Nights at Freddy's, написанная на Godot с использованием C#. Этот проект многому меня научил, особенно о работе с игровыми движками, но со временем я его подзабросил. Честно говоря, игры меня больше не увлекают, и я сосредоточился на других задачах. Самым большим достижением в своей карьере я считаю создание RBoard — шахматной доски на AvaloniaUI с искусственным интеллектом на Haskell. Этот проект показал, что я могу успешно сочетать разные языки и технологии, и я очень горжусь результатом.</p>
             </div>
             <div class="chapter">
-                <h2>Другие хобби</h2>
-                <p>Помимо программирования, у меня есть и другие увлечения, которые помогают мне поддерживать баланс в жизни. Я занимаюсь велоспортом и борьбой, что позволяет мне оставаться в форме и отвлекаться от работы. На выходных я часто гуляю с друзьями, катаюсь на велосипедах, а иногда мы играем в 0 A.D., Minecraft или JoJo All Battle R. Эти занятия помогают мне очистить голову и находить новые идеи. Мне кажется, что такая активность немного необычна для программистов и системных администраторов, но для меня прогулки и спорт — это важная часть жизни.</p>
+                <h2 class="en">Other Hobbies</h2>
+                <h2 class="ru">Другие хобби</h2>
+                <p class="en">Besides programming, I have other interests that help me maintain balance in life. I do cycling and wrestling, which allows me to stay in shape and distract from work. On weekends, I often walk with friends, ride bikes, and sometimes we play 0 A.D., Minecraft, or JoJo All Battle R. These activities help me clear my head and find new ideas. I think such activity is a bit unusual for programmers and system administrators, but for me, walks and sports are an important part of life.</p>
+                <p class="ru">Помимо программирования, у меня есть и другие увлечения, которые помогают мне поддерживать баланс в жизни. Я занимаюсь велоспортом и борьбой, что позволяет мне оставаться в форме и отвлекаться от работы. На выходных я часто гуляю с друзьями, катаюсь на велосипедах, а иногда мы играем в 0 A.D., Minecraft или JoJo All Battle R. Эти занятия помогают мне очистить голову и находить новые идеи. Мне кажется, что такая активность немного необычна для программистов и системных администраторов, но для меня прогулки и спорт — это важная часть жизни.</p>
             </div>
             <div class="chapter">
-                <h2>Мой интерес и мой ПК</h2>
-                <p>Мой путь в программировании во многом вдохновлен моей семьей, особенно дедушкой и родственниками, которые всегда поддерживали мой интерес к технологиям. Сейчас я живу в Казахстане, и моя рабочая станция собрана на базе процессора Ryzen 5 3500, видеокарты RX5600XT и материнской платы MSI A320 micro-ATX. Это идеальная система для моих задач, будь то разработка дистрибутива или эксперименты с новыми языками.</p>
+                <h2 class="en">My Interest and My PC</h2>
+                <h2 class="ru">Мой интерес и мой ПК</h2>
+                <p class="en">My path in programming is largely inspired by my family, especially my grandfather and relatives who have always supported my interest in technology. Now I live in Kazakhstan, and my workstation is built on a Ryzen 5 3500 processor, RX5600XT graphics card, and MSI A320 micro-ATX motherboard. This is the perfect system for my tasks, whether it's developing a distribution or experimenting with new languages.</p>
+                <p class="ru">Мой путь в программировании во многом вдохновлен моей семьей, особенно дедушкой и родственниками, которые всегда поддерживали мой интерес к технологиям. Сейчас я живу в Казахстане, и моя рабочая станция собрана на базе процессора Ryzen 5 3500, видеокарты RX5600XT и материнской платы MSI A320 micro-ATX. Это идеальная система для моих задач, будь то разработка дистрибутива или эксперименты с новыми языками.</p>
             </div>
             <div class="chapter">
-                <h2>Самый Амбициозный проект</h2>
-                <p>Один из моих самых амбициозных проектов — это создание командой Linux-дистрибутива NurOS. Самой сложной частью оказался пакетный менеджер Tulpar, над которым я работал с использованием C++. Этот язык невероятно сложный, но в то же время красивый, и мне пришлось столкнуться с множеством нюансов, чтобы довести проект до ума. Среди других моих работ — установщик для NurOS, шахматная программа RBoard, а также несколько замороженных проектов, таких как Purepkg (пакетный менеджер на Haskell) и OWASD. Еще я начал HSFetch — аналог neofetch на Haskell с крутыми логотипами, но пока не успел его завершить.</p>
+                <h2 class="en">Most Ambitious Project</h2>
+                <h2 class="ru">Самый Амбициозный проект</h2>
+                <p class="en">One of my most ambitious projects is the team creation of the Linux distribution NurOS. The most difficult part turned out to be the package manager Tulpar, which I worked on using C++. This language is incredibly complex but at the same time beautiful, and I had to deal with many nuances to bring the project to completion. Among my other works are the installer for NurOS, the chess program RBoard, as well as several frozen projects such as Purepkg (a package manager in Haskell) and OWASD. I also started HSFetch - a neofetch analog in Haskell with cool logos, but haven't had time to complete it yet.</p>
+                <p class="ru">Один из моих самых амбициозных проектов — это создание командой Linux-дистрибутива NurOS. Самой сложной частью оказался пакетный менеджер Tulpar, над которым я работал с использованием C++. Этот язык невероятно сложный, но в то же время красивый, и мне пришлось столкнуться с множеством нюансов, чтобы довести проект до ума. Среди других моих работ — установщик для NurOS, шахматная программа RBoard, а также несколько замороженных проектов, таких как Purepkg (пакетный менеджер на Haskell) и OWASD. Еще я начал HSFetch — аналог neofetch на Haskell с крутыми логотипами, но пока не успел его завершить.</p>
             </div>
             <div class="chapter">
-                <h2>Душа</h2>
-                <p>Я постоянно изучаю что-то новое, и это иногда мешает мне сосредоточиться на одном деле. Например, я могу начать изучать новый язык программирования, даже если текущий проект еще не завершен. Но я считаю, что такой подход помогает мне расти как разработчику, даже если требует больше времени. Мои профиль на GitHub (github.com/ruzen42) и YouTube-канал (@denyruzen42) — это места, где я делюсь своими проектами и идеями с сообществом.</p>
+                <h2 class="en">Soul</h2>
+                <h2 class="ru">Душа</h2>
+                <p class="en">I'm constantly learning something new, and this sometimes prevents me from focusing on one thing. For example, I might start learning a new programming language even if the current project is not yet complete. But I believe that this approach helps me grow as a developer, even if it takes more time. My GitHub profile (github.com/ruzen42) and YouTube channel (@denyruzen42) are places where I share my projects and ideas with the community.</p>
+                <p class="ru">Я постоянно изучаю что-то новое, и это иногда мешает мне сосредоточиться на одном деле. Например, я могу начать изучать новый язык программирования, даже если текущий проект еще не завершен. Но я считаю, что такой подход помогает мне расти как разработчику, даже если требует больше времени. Мои профиль на GitHub (github.com/ruzen42) и YouTube-канал (@denyruzen42) — это места, где я делюсь своими проектами и идеями с сообществом.</p>
             </div>
             <div class="chapter">
-                <h2>Будущее</h2>
-                <p>В будущем я вижу для себя два пути: либо стать C# .NET Developer, либо уйти в DevOps. Оба направления мне интересны, и я пока размышляю, какой выбрать. Но одно я знаю точно — я хочу продолжать создавать проекты, которые будут полезны другим и вдохновят их, как когда-то вдохновили меня мои первые шаги в программировании.</p>
+                <h2 class="en">Future</h2>
+                <h2 class="ru">Будущее</h2>
+                <p class="en">In the future, I see two paths for myself: either become a C# .NET Developer or go into DevOps. Both directions interest me, and I'm still thinking about which one to choose. But one thing I know for sure - I want to continue creating projects that will be useful to others and inspire them, just as my first steps in programming once inspired me.</p>
+                <p class="ru">В будущем я вижу для себя два пути: либо стать C# .NET Developer, либо уйти в DevOps. Оба направления мне интересны, и я пока размышляю, какой выбрать. Но одно я знаю точно — я хочу продолжать создавать проекты, которые будут полезны другим и вдохновят их, как когда-то вдохновили меня мои первые шаги в программировании.</p>
             </div>
         </div>    </div>
 
     <div class="page" id="projects" style="display: none;">
         <div class="card">
-            <h2>Мои проекты </h2>
-            <p><strong>1:</strong> Создание командой независимого Linux дистрибутива NurOS <a class="proj-a" href="https://github.com/NurOS-Linux">Github</a> и <a class="proj-a" href="https://nuros.org">Оффицальный сайт</a></p>
-            <p><strong>2:</strong> Пакетный менеджер Tulpar для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/Tulpar">Github</a> </p>
-            <p><strong>3:</strong> Установщик для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/nuros-start">Github</a> </p>
-            <p><strong>4:</strong> RBoard - это шахматная доска на AvaloniaUI C#, а ИИ на Haskell <a class="proj-a" href="https://github.com/ruzen42/rboard">Github</a> </p>
-            <p><strong>5:</strong> Purepkg (заморожен) - это пакетный менеджер на Haskell с декларативным конфигом, не Nix <a class="proj-a" href="https://github.com/ruzen42/purepkg">Github</a> </p>
-            <p><strong>6:</strong> HSFetch - это aналог neofetch на Haskell с декларативным конфигом (не реализованно) и с крутыми лого <a class="proj-a" href="https://github.com/NaGNU/rfetch">Github</a> </p>
-            <p><strong>7:</strong> OWASD (заморожен) - это FnaF пародия на Godot C# с Шампунем жумайсынба <a class="proj-a" href="https://github.com/ruzen42/MalledeferOWASD">Github</a> </p>
+            <h2 class="en">My Projects</h2>
+            <h2 class="ru">Мои проекты</h2>
+            <p class="en"><strong>1:</strong> Team creation of the independent Linux distribution NurOS <a class="proj-a" href="https://github.com/NurOS-Linux">Github</a> and <a class="proj-a" href="https://nuros.org">Official website</a></p>
+            <p class="ru"><strong>1:</strong> Создание командой независимого Linux дистрибутива NurOS <a class="proj-a" href="https://github.com/NurOS-Linux">Github</a> и <a class="proj-a" href="https://nuros.org">Оффицальный сайт</a></p>
+            
+            <p class="en"><strong>2:</strong> Package manager Tulpar for NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/Tulpar">Github</a> </p>
+            <p class="ru"><strong>2:</strong> Пакетный менеджер Tulpar для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/Tulpar">Github</a> </p>
+            
+            <p class="en"><strong>3:</strong> Installer for NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/nuros-start">Github</a> </p>
+            <p class="ru"><strong>3:</strong> Установщик для NurOS <a class="proj-a" href="https://github.com/NurOS-Linux/nuros-start">Github</a> </p>
+            
+            <p class="en"><strong>4:</strong> RBoard - a chess board on AvaloniaUI C#, with AI in Haskell <a class="proj-a" href="https://github.com/ruzen42/rboard">Github</a> </p>
+            <p class="ru"><strong>4:</strong> RBoard - это шахматная доска на AvaloniaUI C#, а ИИ на Haskell <a class="proj-a" href="https://github.com/ruzen42/rboard">Github</a> </p>
+            
+            <p class="en"><strong>5:</strong> Purepkg (frozen) - a package manager in Haskell with declarative config, not Nix <a class="proj-a" href="https://github.com/ruzen42/purepkg">Github</a> </p>
+            <p class="ru"><strong>5:</strong> Purepkg (заморожен) - это пакетный менеджер на Haskell с декларативным конфигом, не Nix <a class="proj-a" href="https://github.com/ruzen42/purepkg">Github</a> </p>
+            
+            <p class="en"><strong>6:</strong> HSFetch - a neofetch analog in Haskell with declarative config (not implemented) and cool logos <a class="proj-a" href="https://github.com/NaGNU/rfetch">Github</a> </p>
+            <p class="ru"><strong>6:</strong> HSFetch - это aналог neofetch на Haskell с декларативным конфигом (не реализованно) и с крутыми лого <a class="proj-a" href="https://github.com/NaGNU/rfetch">Github</a> </p>
+            
+            <p class="en"><strong>7:</strong> OWASD (frozen) - a FnaF parody on Godot C# with Shampoo zhumaisynba <a class="proj-a" href="https://github.com/ruzen42/MalledeferOWASD">Github</a> </p>
+            <p class="ru"><strong>7:</strong> OWASD (заморожен) - это FnaF пародия на Godot C# с Шампунем жумайсынба <a class="proj-a" href="https://github.com/ruzen42/MalledeferOWASD">Github</a> </p>
         </div>
     </div>
 
     <div class="page" id="contact" style="display: none;">
         <div class="card">
-            <h2>Я в Интернете</h2>
-            <p><strong>Мой Github:</strong> <a href="https://github.com/ruzen42" target="_blank">клик</a></p>
-            <p><strong>Мой Youtube:</strong> <a href="https://www.youtube.com/@denyruzen42" target="_blank">клик</a></p>
-            <p><strong>Мой Telegram канал:</strong> <a href="https://t.me/ruzen42" target="_blank">клик</a></p>
-            <p><strong>Моя Telegram:</strong> <a href="https://t.me/ruzen72" target="_blank">клик</a></p>
-            <p><strong>Мой Steam:</strong> <a href="https://steamcommunity.com/id/legend1ruzen98" target="_blank">клик</a></p>
+            <h2 class="en">Me on the Internet</h2>
+            <h2 class="ru">Я в Интернете</h2>
+            <p class="en"><strong>My Github:</strong> <a href="https://github.com/ruzen42" target="_blank">click</a></p>
+            <p class="ru"><strong>Мой Github:</strong> <a href="https://github.com/ruzen42" target="_blank">клик</a></p>
+            
+            <p class="en"><strong>My Youtube:</strong> <a href="https://www.youtube.com/@denyruzen42" target="_blank">click</a></p>
+            <p class="ru"><strong>Мой Youtube:</strong> <a href="https://www.youtube.com/@denyruzen42" target="_blank">клик</a></p>
+            
+            <p class="en"><strong>My Telegram channel:</strong> <a href="https://t.me/ruzen42" target="_blank">click</a></p>
+            <p class="ru"><strong>Мой Telegram канал:</strong> <a href="https://t.me/ruzen42" target="_blank">клик</a></p>
+            
+            <p class="en"><strong>My Telegram:</strong> <a href="https://t.me/ruzen72" target="_blank">click</a></p>
+            <p class="ru"><strong>Моя Telegram:</strong> <a href="https://t.me/ruzen72" target="_blank">клик</a></p>
+            
+            <p class="en"><strong>My Steam:</strong> <a href="https://steamcommunity.com/id/legend1ruzen98" target="_blank">click</a></p>
+            <p class="ru"><strong>Мой Steam:</strong> <a href="https://steamcommunity.com/id/legend1ruzen98" target="_blank">клик</a></p>
         </div>
     </div>
 
     <div class="page" id="fetch">
       <div class="card">
+        <h2 class="en">System Information</h2>
+        <h2 class="ru">Системная информация</h2>
         <img src="0fetch.png" style="width: 100%; height: auto;">
         <img src="1fetch.png" style="width: 100%; height: auto;">
         <img src="rice.png" style="width: 100%; height: auto;">
@@ -131,7 +211,37 @@
     <script>
         const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page');
+        const langBtns = document.querySelectorAll('.lang-btn');
+        
+        // Language switching
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                document.body.className = `lang-${lang}`;
+                
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Save language preference
+                localStorage.setItem('preferred-language', lang);
+            });
+        });
+        
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferred-language') || 'en';
+            document.body.className = `lang-${savedLang}`;
+            
+            langBtns.forEach(btn => {
+                if (btn.getAttribute('data-lang') === savedLang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        });
 
+        // Navigation
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -173,3 +283,4 @@
   <p>25.3.2025 - 9.5.2025 inspired by <a href="https://www.slackware.com">slackware.com</a></p>
 </footer>
 </html>
+
