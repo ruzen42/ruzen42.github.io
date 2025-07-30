@@ -1,3 +1,6 @@
 dist-newstyle/
-_cache
+_cache\
+.stack-work\
+_site
+site
 

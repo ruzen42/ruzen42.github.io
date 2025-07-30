@@ -4,6 +4,19 @@
     box-sizing: border-box;
 }
 
+.naving a {
+    margin: 5px;
+}
+
+.main {
+    background: linear-gradient(135deg, #2b2b2b 0%, #383838 100%);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 17px;
+    justify-content: center;
+    align-items: center;
+}
+
 .content {
     background: linear-gradient(135deg, #2b2b2b 0%, #383838 100%);
     margin: 5px;
@@ -60,9 +73,7 @@ a {
 
 nav {
     background: linear-gradient(135deg, #2b2b2b 0%, #383838 100%);
-    padding: 15px 20px;
     position: fixed;
-    margin: 0px 20px 0px 0px;
     width: 100%;
     top: 0;
     z-index: 10;
@@ -72,10 +83,6 @@ nav {
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-}
-
-nav a {
-  margin: 5;
 }
 
 nav > div:first-child {
