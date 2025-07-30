@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 
 .naving a {
@@ -47,7 +47,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     border-top: 2px solid #453A62;
-    font-family: 'Source Code Pro';
+    font-family: 'Roboto';
     font-size: 1em;
     box-shadow: 0 -2px 10px rgba(69, 58, 98, 0.3);
 }
@@ -55,7 +55,7 @@ footer {
 body {
     background-color: #1e1e1e;
     color: #ffffff;
-    font-family: 'Source Code Pro';
+    font-family: '';
     margin: 50px;
     padding: 10px;
     min-height: 100vh;
