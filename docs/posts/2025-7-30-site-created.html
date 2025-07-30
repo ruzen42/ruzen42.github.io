@@ -16,8 +16,6 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     </head>
     <body>
-        <canvas id="matrix"></canvas>
-        
         <header>
             <nav class="naving">
                 <h3>Ruzen42 Blog</h3>
@@ -32,22 +30,36 @@
 
         <main role="main">
             <h1>Initializing</h1>
-            <article>
-    <section class="header">
-        Posted on July 30, 2025
+            <article class="post-article">
+    <header class="header">
+        <div class="post-meta">
+            <time datetime="July 30, 2025" class="post-date">Posted on July 30, 2025</time>
+            
+                <span class="post-author">by <strong>ruzen42</strong></span>
+            
+        </div>
         
-            by ruzen42
+            <h1 class="post-title">Initializing</h1>
         
-    </section>
+    </header>
+    
     <section class="content">
         <p>this website is remake of my old site written in purely HTML+CSS+JS,
-now I`m use Hakyll to Generate posts</p>
-    </section>
+now I`m use Hakyll to Generate posts</p></section>
     
-    <section class="tags">
-        Tags: about-site, Hakyll, Haskell
-    </section>
     
+    <footer class="tags">
+        <span class="tags-label">Tags:</span>
+        <div class="tags-list">about-site, Hakyll, Haskell</div>
+    </footer>
+    
+    
+    <nav class="post-navigation">
+        <div class="nav-links">
+            <a href="../" class="back-home">← Back to Home</a>
+            <a href="../archive.html" class="view-archive">View All Posts →</a>
+        </div>
+    </nav>
 </article>
 
         </main>
@@ -62,7 +74,5 @@ now I`m use Hakyll to Generate posts</p>
                 <a href="https://jaspervdj.be/hakyll/" target="_blank" rel="noopener">Hakyll</a>
             </p>
         </footer>
-        
-        <script src="../js/matrix.js"></script>
     </body>
 </html>

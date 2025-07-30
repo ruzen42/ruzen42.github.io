@@ -1,16 +1,31 @@
-<article>
-    <section class="header">
-        Posted on $date$
-        $if(author)$
-            by $author$
+<article class="post-article">
+    <header class="header">
+        <div class="post-meta">
+            <time datetime="$date$" class="post-date">Posted on $date$</time>
+            $if(author)$
+                <span class="post-author">by <strong>$author$</strong></span>
+            $endif$
+        </div>
+        $if(title)$
+            <h1 class="post-title">$title$</h1>
         $endif$
-    </section>
+    </header>
+    
     <section class="content">
         $body$
     </section>
+    
     $if(tags)$
-    <section class="tags">
-        Tags: $tags$
-    </section>
+    <footer class="tags">
+        <span class="tags-label">Tags:</span>
+        <div class="tags-list">$tags$</div>
+    </footer>
     $endif$
+    
+    <nav class="post-navigation">
+        <div class="nav-links">
+            <a href="/" class="back-home">← Back to Home</a>
+            <a href="/archive.html" class="view-archive">View All Posts →</a>
+        </div>
+    </nav>
 </article>
