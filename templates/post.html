@@ -5,7 +5,12 @@
             by $author$
         $endif$
     </section>
-    <section>
+    <section class="content">
         $body$
     </section>
+    $if(tags)$
+    <section class="tags">
+        Tags: $tags$
+    </section>
+    $endif$
 </article>
