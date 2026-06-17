@@ -1,6 +1,5 @@
 dist-newstyle/
 _cache/
 .stack-work/
-_site
-site
+result/
 
