@@ -1,18 +1,10 @@
---------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
 
 
---------------------------------------------------------------------------------
-
-config :: Configuration
-config = defaultConfiguration
-  { destinationDirectory = "docs"
-  }
-
 main :: IO ()
-main = hakyllWith config $ do
+main = hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -21,14 +13,8 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.html", "contact.html", "hardware.html"]) $ do
+    match (fromList ["about.md", "contact.md"]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
-
-    match "404.md" $ do
-        route   $ setExtension "html" 
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
@@ -61,6 +47,7 @@ main = hakyllWith config $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    constField "title" "Home"                `mappend`
                     defaultContext
 
             getResourceBody
@@ -71,7 +58,6 @@ main = hakyllWith config $ do
     match "templates/*" $ compile templateBodyCompiler
 
 
---------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
     dateField "date" "%B %e, %Y" `mappend`

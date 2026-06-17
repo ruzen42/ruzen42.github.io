@@ -1,31 +1,8 @@
-<article class="post-article">
-    <header class="header">
-        <div class="post-meta">
-            <time datetime="$date$" class="post-date">Дата: $date$</time>
-            $if(author)$
-                <span class="post-author">by <strong>$author$</strong></span>
-            $endif$
-        </div>
-        $if(title)$
-            <h1 class="post-title">$title$</h1>
-        $endif$
-    </header>
-    
-    <section class="content">
-        $body$
-    </section>
-    
-    $if(tags)$
-    <footer class="tags">
-        <span class="tags-label">Tags:</span>
-        <div class="tags-list">$tags$</div>
-    </footer>
+<div class="info">
+    Posted on $date$
+    $if(author)$
+        by $author$
     $endif$
-    
-    <nav class="post-navigation">
-        <div class="nav-links">
-            <a href="/" class="back-home">← Главная</a>
-            <a href="/archive.html" class="view-archive">Больше постов→</a>
-        </div>
-    </nav>
-</article>
+</div>
+
+$body$
