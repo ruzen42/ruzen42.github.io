@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Hide scrollbar for Chrome, Safari and Opera */
 ::-webkit-scrollbar {
     display: none;
 }
@@ -15,7 +14,6 @@ body {
     padding: 0;
     min-height: 100vh;
 
-    /* Hide scrollbar for IE, Edge and Firefox */
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -26,20 +24,20 @@ body {
     left: -5%;
     width: 110%;
     height: 110%;
-    background-image: url('/images/background.png');
+    background-image: url('/images/main.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     filter: blur(10px);
     z-index: -1;
-    transform: translateZ(0); /* Hardware acceleration */
+    transform: translateZ(0); 
 }
 
 .container {
     margin: 3em auto;
     max-width: 45em;
     padding: 2.5em;
-    background-color: rgba(30, 35, 38, 0.85); /* Everforest bg0 with 85% opacity */
+    background-color: rgba(30, 35, 38, 0.85); 
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 5px;
@@ -48,7 +46,7 @@ body {
 }
 
 .tile {
-    background-color: rgba(46, 56, 60, 0.85); /* Everforest bg2 with 85% opacity */
+    background-color: rgba(46, 56, 60, 0.85); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 5px;
@@ -106,27 +104,20 @@ h1 {
     color: #A7C080; /* Everforest Green */
 }
 
-footer {
-    border-top: 1px solid #323C41;
-    color: #859289;
-    font-size: 0.8em;
-    margin-top: 3em;
-    padding: 2em 0;
-    text-align: center;
-}
-
-footer a {
-    color: #83C092; /* Everforest Aqua */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
 .info {
     color: #859289;
     font-size: 0.8em;
     font-style: italic;
     margin-bottom: 2em;
 }
+
+.hljs {
+  background: #2d353b !important;
+  color: #d3c6aa !important;
+}
+.hljs-keyword, .hljs-selector-tag { color: #e67e80 !important; } /* Red */
+.hljs-string, .hljs-title { color: #a7c080 !important; }       /* Green  */
+.hljs-type, .hljs-built_in { color: #7fbbb3 !important; }      /* Blue*/
+.hljs-number, .hljs-literal { color: #d699b6 !important; }     /* Purple */
+.hljs-comment { color: #859289 !important; font-style: italic; } /* Gray */
+.hljs-preprocessor, .hljs-meta { color: #e69875 !important; }  /* Orange */

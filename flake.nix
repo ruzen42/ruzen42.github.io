@@ -1,8 +1,6 @@
 {
-  description = "Hakyll static site flake";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -24,7 +22,7 @@
           buildInputs = with haskellPackages; [
             cabal-install
             haskell-language-server
-            ghcid 
+            stack
           ] ++ (with pkgs; [
             zlib
           ]);

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ruzen42 - MCrypt</title>
+        <link rel="stylesheet" href="../css/default.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    </head>
+    <body>
+        <div class="bg-image"></div>
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <a href="../">Ruzen42</a>
+                </div>
+                <nav>
+                    <a href="../">Home</a>
+                    <a href="../archive.html">Archive</a>
+                    <a href="../contact.html">Contact</a>
+                </nav>
+            </header>
+
+            <main role="main">
+                <h1>MCrypt</h1>
+                <div class="info">
+    Posted on August 16, 2026
+    
+        by Ruzen42
+    
+</div>
+
+<p>Мне всегда не нравились ключи SSH и GPG: они лежат в странных каталогах, а сами инструменты слишком перегружены. У меня было очень мало опыта в криптографии — мой максимум в проектах это GUI на GTK#, которая просто хеширует строку. Но <a href="https://github.com/ruzen42/mcrypt">MCrypt</a> - это заметно сложнее. Не буду скрывать, я задействовал Claude Sonnet 4.6 для выбора алгоритмов (Dilithium3 и BLAKE3) и реализации FFI-биндингов под liboqs (Open Quantum Safe) и потратил все дневные токены, я жестко протупил и сломал макрос (#define MCRYPT_SIG_ALG) написав туда “Dilithium3” хотя нужно было OQS_SIG_alg_ml_dsa_65 без кавычек и код не работал потому что в общую для oqs функцию для подписи ложился не макрос, а просто строка “Dilithium3”</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#ifndef MCRYPT_OQS_SHIM_H</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#define MCRYPT_OQS_SHIM_H</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stddef.h&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdint.h&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">#define MCRYPT_SIG_ALG OQS_SIG_alg_ml_dsa_65</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">size_t</span> mcrypt_sig_public_key_len<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dt">size_t</span> mcrypt_sig_secret_key_len<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">size_t</span> mcrypt_sig_max_signature_len<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> mcrypt_sig_keypair<span class="op">(</span><span class="dt">uint8_t</span> <span class="op">*</span>public_key<span class="op">,</span> <span class="dt">uint8_t</span> <span class="op">*</span>secret_key<span class="op">);</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> mcrypt_sig_sign<span class="op">(</span><span class="dt">uint8_t</span> <span class="op">*</span>signature<span class="op">,</span> <span class="dt">size_t</span> <span class="op">*</span>signature_len<span class="op">,</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">const</span> <span class="dt">uint8_t</span> <span class="op">*</span>message<span class="op">,</span> <span class="dt">size_t</span> message_len<span class="op">,</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                    <span class="dt">const</span> <span class="dt">uint8_t</span> <span class="op">*</span>secret_key<span class="op">);</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> mcrypt_sig_verify<span class="op">(</span><span class="dt">const</span> <span class="dt">uint8_t</span> <span class="op">*</span>message<span class="op">,</span> <span class="dt">size_t</span> message_len<span class="op">,</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                      <span class="dt">const</span> <span class="dt">uint8_t</span> <span class="op">*</span>signature<span class="op">,</span> <span class="dt">size_t</span> signature_len<span class="op">,</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                      <span class="dt">const</span> <span class="dt">uint8_t</span> <span class="op">*</span>public_key<span class="op">);</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="pp">#endif </span><span class="co">/* MCRYPT_OQS_SHIM_H */</span></span></code></pre></div>
+<h3 id="mcrypt-официально-проверен-под">MCrypt официально проверен под</h3>
+<ul>
+<li>Linux</li>
+<li>FreeBSD</li>
+</ul>
+<p>больше я нигде не запускал тулчейн mcrypt, стоит проверить работу программы на винде</p>
+<h2 id="работа-с-mcrypt">Работа с MCrypt</h2>
+<p>тулчейн mcrypt на момент написания этого поста разбит на две программы, mkey для менеджмента ключей и mcrypt для подписи файлов и проверки подписи, в будущем добавлю функционал щифрования файлов</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mkey</span> <span class="at">--list</span> <span class="co"># показывает все ключи, после установки ключей он не создает</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">mkey</span> <span class="at">--new</span> main <span class="co"># создание дефолтного ключа</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">mkey</span> <span class="at">-l</span> <span class="co"># ключ готов</span></span></code></pre></div>
+<h3 id="подпись-файлов">Подпись файлов</h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;secret-message: 63784&quot;</span> <span class="op">&gt;</span> message</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">mcrypt</span> <span class="at">--sign</span> message <span class="co"># получаем message.sig подписанный ключем main</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># также можно использовать ключи отличные от main </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mcrypt --sign message --key name</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">mcrypt</span> <span class="at">-C</span> message <span class="co"># проверяем ключем main, если файл без изменений проверка подписи пройдет успешно</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;43&quot;</span> <span class="op">&gt;&gt;</span> message </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ex">mcrypt</span> <span class="at">-C</span> message <span class="at">--key</span> main <span class="co"># выдаст ошибку</span></span></code></pre></div>
+
+            </main>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/c.min.js"></script>
+        <script>hljs.highlightAll();</script>
+    </body>
+</html>

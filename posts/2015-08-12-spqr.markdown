@@ -1,6 +1,0 @@
----
-title: SPQR
-author: Test
----
-
-Senatus Populusque Romanus.
